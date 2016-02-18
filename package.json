@@ -1,7 +1,7 @@
 {
-  "name": "shared-git-hooks",
-  "version": "1.1.4",
-  "description": "Share git hooks across your team through npm install",
+  "name": "app-git-hooks",
+  "version": "1.0.0",
+  "description": "Share ndoe app specific git hooks across your team through npm install. Forked from https://github.com/kilianc/shared-git-hooks",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -22,18 +22,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kilianc/shared-git-hooks.git"
+    "url": "git+https://github.com/maephisto/app-git-hooks.git"
   },
   "keywords": [
     "git",
     "hooks"
   ],
-  "author": "Kilian Ciuffolo <me@nailik.org>",
+  "author": "Marius Mischie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kilianc/shared-git-hooks/issues"
+    "url": "https://github.com/maephisto/app-git-hooks/issues"
   },
-  "homepage": "https://github.com/kilianc/shared-git-hooks#readme",
+  "homepage": "https://github.com/maephisto/app-git-hooks#readme",
   "standard": {
     "globals": [
       "after",

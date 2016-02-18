@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILENAME="$(basename "$0")"
-GIT_HOOKS_DIR="${GIT_HOOKS_DIR:=$(pwd)/hooks}"
+GIT_HOOKS_DIR="${GIT_HOOKS_DIR:=$(pwd)/node_modules/app-git-hooks/hooks}"
 GIT_HOOK_PATH="$GIT_HOOKS_DIR/$FILENAME"
 PATH={{PATH}}
 

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+echo "\nLet me check if you can commit!"
+
+jsFiles=$(git diff --cached --name-only --diff-filter=ACM | grep ".js$")
+lessFiles=$(git diff --cached --name-only --diff-filter=ACM | grep ".less$")
+
+if [ "$jsFiles" = "" ]; then
+        echo "\033[32mNo JavaScript files were modified.\033[0m"
+        if [ "$lessFiles" = "" ]; then
+                echo "\033[32mNo CSS files were modified. All good, committing...\033[0m"
+                exit 0
+        fi
+fi
+
+jsValidationResult=$(grunt jshint | grep "Done, without errors")
+lessValidationResult=$(grunt less | grep "Done, without errors")
+
+if [ "$jsValidationResult" != "" ]; then
+        echo "\033[32mJSHint Passed. Awesome!\033[0m"
+else
+        echo "\033[31mJHLint Failed :( Commit stopped. \033[0m"
+        exit 1
+fi
+if [ "$lessValidationResult" != "" ]; then
+        echo "\033[32mLESS Passed\033[0m"
+else
+        echo "\033[31mLESS Failed :( Commit stopped. \033[0m"
+        exit 1
+fi
+
+echo "\033[32mLet's roll! Commiting...\033[0m"
